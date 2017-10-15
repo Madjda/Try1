@@ -1,34 +1,51 @@
-import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class VectorHelper {
-	  private  Array[] vect;
-      private long tail;
-	
-      
-      public VectorHelper( long tail) {
+       private  ArrayList<Integer> vect;
+       
+       
+       
+       public VectorHelper() {
+    	   
 		super();
+		vect= new ArrayList<Integer>();
 		
-		this.setTail(tail);
-		this.setVect(new Array[(int) tail]);
-	}
+	   }
 
-
-	public Array[] getVect() {
-		return vect;
-	}
-
-
-	public void setVect(Array[] vect) {
-		this.vect = vect;
-	}
-
+       public void CreateVectRand (){
+    	Random rand=new Random();
+    	int tail =rand.nextInt(100);
+    	
+       	for (int i=0;i<tail;i++){
+       		vect.add(rand.nextInt(750));
+       	}
+       }
+      
+       public void CreateVect (long tail, int init,int pas){
+          	for (int i=0;i<tail;i++){
+          		vect.add(init+=pas);
+          	}
+         }
+      
+       public void ShowVect(){
+    	   for (int i=0;i<this.getTail();i++){
+    		   System.out.print("|"+vect.get(i)+"|");
+    	   }
+       }
+	
 
 	public long getTail() {
-		return tail;
+		int cpt=0;
+		for (int a:vect) {
+			cpt++;
+		}
+		return cpt;
 	}
 
 
 	public void setTail(long tail) {
-		this.tail = tail;
 	}
+       
+       
 }
