@@ -46,6 +46,45 @@ public class VectorHelper {
 
 	public void setTail(long tail) {
 	}
+	
+	public ArrayList<Integer> Sommer( ArrayList<Integer> vectr )
+	{ 
+		ArrayList<Integer>  vectSomme;
+	
+     Try {
+    	     if (vectr.getTail() != this.getTail() ) 
+                {
+    	            new TailleException () ;
+    	 
+                 } else  {
+                	  
+                	 for (int i=0;i<this.getTail();i++) {
+                		 vectSomme[i]=	vectr[i]+vect[i] ;
+             		                                    } 
+                	 
+                         }
+    	 
+        }
+     catch (TailleException e) { system.out.print("Impossible de sommer des vecteurs de différentes tailles")}
+     return vectSomme ;
        
-       
+    }
+	public void Inverse ()
+	{ 
+	  int x ,i =0,j=this.getTail();
+		while ( i!=j )
+		{  x= this.vect[i];
+		 this.vect[i]=this.vect[j] ;
+		 this.vect[j]=x;
+		 j--;
+		 i++ ;
+		}
+		
+	
+		
+	}
+
+    	
+	
+	
 }
