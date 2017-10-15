@@ -3,7 +3,8 @@ import java.util.Random;
 
 public class VectorHelper {
        private  ArrayList<Integer> vect;
-       
+       private int MaxElm ;
+       private int MinElm ;
        
        
        public VectorHelper() {
@@ -12,14 +13,37 @@ public class VectorHelper {
 		vect= new ArrayList<Integer>();
 		
 	   }
+       
 
-       public void CreateVectRand (){
+       public int getMaxElm() {
+		return MaxElm;
+	}
+
+
+	public void setMaxElm(int maxElm) {
+		MaxElm = maxElm;
+	}
+
+
+	public int getMinElm() {
+		return MinElm;
+	}
+
+
+	public void setMinElm(int minElm) {
+		MinElm = minElm;
+	}
+
+
+	public void CreateVectRand (){
     	Random rand=new Random();
     	int tail =rand.nextInt(10);
     	
        	for (int i=0;i<tail;i++){
        		vect.add(rand.nextInt(750));
        	}
+       	this.MinMax();
+		
        }
        
        public int FindSmlElt (final int born){
@@ -40,6 +64,7 @@ public class VectorHelper {
           	for (int i=0;i<tail;i++){
           		vect.add(init+=pas);
           	}
+          	this.MinMax();
          }
       
        public void ShowVect(){
@@ -94,11 +119,23 @@ public class VectorHelper {
 		 i++ ;
 		}
 	}
+		public void MinMax ()
+		{
+			int  min=this.vect.get(0) , max = min ;
+			 for (int i=1;i<this.getTail();i++) {
+				 if (max < this.vect.get(i) ) max = this.vect.get(i) ;
+				 if (min > this.vect.get(i) ) min = this.vect.get(i) ;
+				 
+     		                 }
+			 this.MaxElm=max ;
+			 this.MinElm=min ;
+			
+		}
+		
+		
+	}
 	
 		
 	
 
-    	
-	
-	
-}
+ 
