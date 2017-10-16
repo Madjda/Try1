@@ -169,6 +169,39 @@ public class VectorHelper {
 	    	   else return -1;
 	    	   
 	       }
+	       private void Replace(int born){
+	    	   
+	    	   int x, swip = this.FindSmlElt(born);
+	    	   if (swip!=-1){
+	    		   x=vect.get(born);
+	    		   vect.set(born, vect.get(swip)) ;
+	    			 vect.set(swip, x) ;
+	    		   
+	    	   }
+	       }
+	       public void SortVect(){
+	    	   for (int i=0;i<this.getTail();i++){
+	    		   Replace(i);
+	    	   }
+	       }
+	       
+	       public int Formula1(){
+	   		int sum =0;
+	   		for(int i=0;i<this.getTail();i++){
+	   			sum+=vect.get(i);
+	   		}
+	   		return sum;
+	   		
+	   	}
+	   	
+	   	public void Formula2(){
+	   		
+	   		for(int i=0;i<this.getTail();i++){
+	   			vect.set(i,vect.get(i)*3);
+	   		}
+	   	
+	   		
+	   	}
 		
 	}
 	
